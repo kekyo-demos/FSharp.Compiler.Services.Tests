@@ -8,6 +8,7 @@ module Hoge =
     open System.IO
     open Microsoft.FSharp.Compiler.SourceCodeServices
     open Microsoft.FSharp.Compiler.Ast
+    open Microsoft.FSharp.Compiler.Ast
 
     [<EntryPoint>]
     let main argv = 
@@ -21,14 +22,14 @@ module Hoge =
                 let projOptions =
                     ProjectCracker.GetProjectOptionsFromProjectFile(fsprojPath)
 
-                let path0 = projOptions.OtherOptions.[22]
+                let path0 = projOptions.OtherOptions.[21]
 
                 return! checker.ParseFileInProject(path0, File.ReadAllText(path0), projOptions) 
             }
 
         //let fsprojPath = "D:\\PROJECT\\Persimmon\\tests\\Persimmon.Script.Tests\\Persimmon.Script.Tests.fsproj"
         //let fsprojPath = "D:\\PROJECT\\FSharp.Compiler.Services.Tests\\FSharp.Compiler.Services.Tests\\FSharp.Compiler.Services.Tests.fsproj"
-        let fsprojPath = "C:\\PROJECT\\Persimmon\examples\\Persimmon.Sample\\Persimmon.Sample.fsproj"
+        let fsprojPath = Path.Combine(Environment.CurrentDirectory, "Persimmon.Sample.fsproj")
 
         let results = parseFromFsproj(fsprojPath) |> Async.RunSynchronously
 //        let r2 = results.GetAllUsesOfAllSymbols() |> Async.RunSynchronously
@@ -37,23 +38,29 @@ module Hoge =
 //        let r70ref = results.GetUsesOfSymbol(r2.[70].Symbol) |> Async.RunSynchronously
 
         let rec visitPattern = function
-          | SynPat.Wild(_) -> 
-              printfn "  .. アンダースコアパターン"
+//          | SynPat.Wild(_) -> 
+//              printfn "  .. アンダースコアパターン"
           | SynPat.Named(pat, name, _, _, _) ->
               visitPattern pat
               printfn "  .. 名前 '%s' のパターン" name.idText
           | SynPat.LongIdent(LongIdentWithDots(ident, _), _, _, _, _, _) ->
               let names = String.concat "." [ for i in ident -> i.idText ]
               printfn "  .. 識別子: %s" names
-          | pat -> printfn "  .. その他のパターン: %A" pat
+//        | pat -> printfn "  .. その他のパターン: %A" pat
+          | _ -> ()
+
+        let visitConst = function
+          | SynConst.String(str, _) ->
+              printfn "  .. Const \"%s\"" str
+          | _ -> ()
 
         let rec visitExpression = function
-          | SynExpr.IfThenElse(cond, trueBranch, falseBranchOpt, _, _, _, _) ->
-              // すべての部分式を走査
-              printfn "条件部:"
-              visitExpression cond
-              visitExpression trueBranch
-              falseBranchOpt |> Option.iter visitExpression 
+//          | SynExpr.IfThenElse(cond, trueBranch, falseBranchOpt, _, _, _, _) ->
+//              // すべての部分式を走査
+//              printfn "条件部:"
+//              visitExpression cond
+//              visitExpression trueBranch
+//              falseBranchOpt |> Option.iter visitExpression 
 
           | SynExpr.LetOrUse(_, _, bindings, body, _) ->
               // バインディングを走査
@@ -67,7 +74,17 @@ module Hoge =
               // 本体の式を走査
               printfn "本体は以下:"
               visitExpression body
+          | SynExpr.App(_, _, expr0, expr1, _) ->
+              visitExpression expr0
+              visitExpression expr1
+          | SynExpr.Ident id ->
+              printfn "Ident: %A" id
+          | SynExpr.Const(c, _) ->
+              visitConst c
+          | SynExpr.ArrayOrListOfSeqExpr(_, expr, _) ->
+              visitExpression expr
           | expr -> printfn " - サポート対象外の式: %A" expr
+//          | _ -> ()
 
         let visitDeclarations decls = 
             for declaration in decls do
@@ -81,7 +98,8 @@ module Hoge =
                                 data, pat, retInfo, body, m, sp)) = binding
                     visitPattern pat 
                     visitExpression body         
-            | _ -> printfn " - サポート対象外の宣言: %A" declaration
+//            | _ -> printfn " - サポート対象外の宣言: %A" declaration
+            | _ -> ()
 
         let visitModulesAndNamespaces modulesOrNss =
           for moduleOrNs in modulesOrNss do

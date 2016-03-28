@@ -1,158 +1,166 @@
-﻿
-名前空間またはモジュール: [Persimmon; Sample]
- - サポート対象外の宣言: Open
-  (LongIdentWithDots ([Persimmon],[]),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (3,5--3,14) IsSynthetic=false)
-  .. アンダースコアパターン
+﻿名前空間またはモジュール: [Persimmon; Sample]
   .. 名前 'test1' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,
-   App
-     (NonAtomic,false,Ident test,
-      Const
-        (String
-           ("success test",
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (5,17--5,31) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (5,17--5,31) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (5,12--5,31) IsSynthetic=false),
-   CompExpr
-     (false,{contents = false;},
-      DoBang
-        (App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident assertEquals,
-               Const
-                 (Int32 1,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (6,19--6,20) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (6,6--6,20) IsSynthetic=false),
+Ident: test
+  .. Const "success test"
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   DoBang
+     (App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident assertEquals,
             Const
               (Int32 1,
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (6,21--6,22) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (6,6--6,22) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (6,2--6,22) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (5,32--7,1) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (5,12--7,1) IsSynthetic=false)
-  .. アンダースコアパターン
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (6,19--6,20) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (6,6--6,20) IsSynthetic=false),
+         Const
+           (Int32 1,
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (6,21--6,22) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (6,6--6,22) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (6,2--6,22) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (5,32--7,1) IsSynthetic=false)
   .. 名前 'test2' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,
-   App
-     (NonAtomic,false,Ident test,
-      Const
-        (String
-           ("failure test",
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (9,17--9,31) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (9,17--9,31) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (9,12--9,31) IsSynthetic=false),
-   CompExpr
-     (false,{contents = false;},
-      DoBang
-        (App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident assertEquals,
-               Const
-                 (Int32 1,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (10,19--10,20) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (10,6--10,20) IsSynthetic=false),
+Ident: test
+  .. Const "failure test"
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   DoBang
+     (App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident assertEquals,
             Const
-              (Int32 2,
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (10,21--10,22) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (10,6--10,22) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (10,2--10,22) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (9,32--11,1) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (9,12--11,1) IsSynthetic=false)
- - サポート対象外の宣言: Exception
-  (ExceptionDefn
-     (ExceptionDefnRepr
-        ([],
-         UnionCase
-           ([],MyException,UnionCaseFields [],PreXmlDocEmpty,null,
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (13,10--13,21) IsSynthetic=false),
-         null,
-         PreXmlDoc
-           (Microsoft.FSharp.Compiler.Range+pos,
-            Microsoft.FSharp.Compiler.Ast+XmlDocCollector),null,
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (13,0--13,21) IsSynthetic=false),
-      [],
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (13,0--13,21) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (13,0--13,21) IsSynthetic=false)
-  .. アンダースコアパターン
+              (Int32 1,
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (10,19--10,20) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (10,6--10,20) IsSynthetic=false),
+         Const
+           (Int32 2,
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (10,21--10,22) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (10,6--10,22) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (10,2--10,22) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (9,32--11,1) IsSynthetic=false)
   .. 名前 'test3' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,
-   App
-     (NonAtomic,false,Ident test,
-      Const
-        (String
-           ("exn test",
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (15,17--15,27) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (15,17--15,27) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (15,12--15,27) IsSynthetic=false),
-   CompExpr
-     (false,{contents = false;},
-      LetOrUse
-        (false,false,
-         [Binding
-            (null,NormalBinding,false,false,[],
-             PreXmlDoc
-               (Microsoft.FSharp.Compiler.Range+pos,
-                Microsoft.FSharp.Compiler.Ast+XmlDocCollector),
-             SynValData (null,SynValInfo ([[]],SynArgInfo ([],false,null)),null),
-             LongIdent
-               (LongIdentWithDots ([f],[]),null,null,
-                Pats
-                  [Paren
-                     (Const
-                        (Unit,
-                         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (16,8--16,10) IsSynthetic=false),
-                      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (16,8--16,10) IsSynthetic=false)],
-                null,
-                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (16,6--16,10) IsSynthetic=false),
+Ident: test
+  .. Const "exn test"
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   LetOrUse
+     (false,false,
+      [Binding
+         (null,NormalBinding,false,false,[],
+          PreXmlDoc
+            (Microsoft.FSharp.Compiler.Range+pos,
+             Microsoft.FSharp.Compiler.Ast+XmlDocCollector),
+          SynValData (null,SynValInfo ([[]],SynArgInfo ([],false,null)),null),
+          LongIdent
+            (LongIdentWithDots ([f],[]),null,null,
+             Pats
+               [Paren
+                  (Const
+                     (Unit,
+                      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (16,8--16,10) IsSynthetic=false),
+                   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (16,8--16,10) IsSynthetic=false)],
              null,
-             Sequential
-               (SequencePointsAtSeq,true,
-                App
-                  (NonAtomic,false,Ident raise,Ident MyException,
-                   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (17,4--17,21) IsSynthetic=false),
-                Const
-                  (Int32 42,
-                   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (18,4--18,6) IsSynthetic=false),
-                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (17,4--18,6) IsSynthetic=false),
-             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (16,6--16,10) IsSynthetic=false,
-             NoSequencePointAtLetBinding)],
-         LetOrUseBang
-           (SequencePointAtBinding
-              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,2--19,29) IsSynthetic=false,
-            false,true,
-            Named
-              (Wild
-                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,7--19,8) IsSynthetic=false,
-               e,false,null,
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,7--19,8) IsSynthetic=false),
-            App
-              (NonAtomic,false,Ident trap,
-               CompExpr
-                 (false,{contents = false;},
+             D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (16,6--16,10) IsSynthetic=false),
+          null,
+          Sequential
+            (SequencePointsAtSeq,true,
+             App
+               (NonAtomic,false,Ident raise,Ident MyException,
+                D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (17,4--17,21) IsSynthetic=false),
+             Const
+               (Int32 42,
+                D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (18,4--18,6) IsSynthetic=false),
+             D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (17,4--18,6) IsSynthetic=false),
+          D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (16,6--16,10) IsSynthetic=false,
+          NoSequencePointAtLetBinding)],
+      LetOrUseBang
+        (SequencePointAtBinding
+           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,2--19,29) IsSynthetic=false,
+         false,true,
+         Named
+           (Wild
+              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,7--19,8) IsSynthetic=false,
+            e,false,null,
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,7--19,8) IsSynthetic=false),
+         App
+           (NonAtomic,false,Ident trap,
+            CompExpr
+              (false,{contents = false;},
+               App
+                 (NonAtomic,false,Ident it,
+                  Paren
+                    (App
+                       (NonAtomic,false,Ident f,
+                        Const
+                          (Unit,
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,24--19,26) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,22--19,26) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,21--19,22) IsSynthetic=false,
+                     Some
+                       D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,26--19,27) IsSynthetic=false,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,21--19,27) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,18--19,27) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,16--19,29) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,11--19,29) IsSynthetic=false),
+         Sequential
+           (SequencePointsAtSeq,true,
+            DoBang
+              (App
+                 (NonAtomic,false,
                   App
-                    (NonAtomic,false,Ident it,
-                     Paren
-                       (App
-                          (NonAtomic,false,Ident f,
-                           Const
-                             (Unit,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,24--19,26) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,22--19,26) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,21--19,22) IsSynthetic=false,
-                        Some
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,26--19,27) IsSynthetic=false,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,21--19,27) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,18--19,27) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,16--19,29) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,11--19,29) IsSynthetic=false),
+                    (NonAtomic,false,Ident assertEquals,
+                     Const
+                       (String
+                          ("",
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,19--20,21) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,19--20,21) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,6--20,21) IsSynthetic=false),
+                  LongIdent
+                    (false,
+                     LongIdentWithDots
+                       ([e; Message],
+                        [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,23--20,24) IsSynthetic=false]),
+                     null,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,22--20,31) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,6--20,31) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,2--20,31) IsSynthetic=false),
             Sequential
               (SequencePointsAtSeq,true,
+               DoBang
+                 (App
+                    (NonAtomic,false,
+                     App
+                       (NonAtomic,false,Ident assertEquals,
+                        TypeApp
+                          (Ident typeof,
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,25--21,26) IsSynthetic=false,
+                           [LongIdent (LongIdentWithDots ([MyException],[]))],[],
+                           Some
+                             D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,37--21,38) IsSynthetic=false,
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,25--21,38) IsSynthetic=false,
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,19--21,38) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,6--21,38) IsSynthetic=false),
+                     Paren
+                       (App
+                          (Atomic,false,
+                           LongIdent
+                             (false,
+                              LongIdentWithDots
+                                ([e; GetType],
+                                 [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,41--21,42) IsSynthetic=false]),
+                              null,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,40--21,49) IsSynthetic=false),
+                           Const
+                             (Unit,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,49--21,51) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,40--21,51) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,39--21,40) IsSynthetic=false,
+                        Some
+                          D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,51--21,52) IsSynthetic=false,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,39--21,52) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,6--21,52) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,2--21,52) IsSynthetic=false),
                DoBang
                  (App
                     (NonAtomic,false,
@@ -161,351 +169,202 @@
                         Const
                           (String
                              ("",
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,19--20,21) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,19--20,21) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,6--20,21) IsSynthetic=false),
-                     LongIdent
-                       (false,
-                        LongIdentWithDots
-                          ([e; Message],
-                           [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,23--20,24) IsSynthetic=false]),
-                        null,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,22--20,31) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,6--20,31) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,2--20,31) IsSynthetic=false),
-               Sequential
-                 (SequencePointsAtSeq,true,
-                  DoBang
-                    (App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident assertEquals,
-                           TypeApp
-                             (Ident typeof,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,25--21,26) IsSynthetic=false,
-                              [LongIdent (LongIdentWithDots ([MyException],[]))],
-                              [],
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,19--22,21) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,19--22,21) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,6--22,21) IsSynthetic=false),
+                     Paren
+                       (App
+                          (Atomic,false,
+                           LongIdent
+                             (false,
+                              LongIdentWithDots
+                                ([e; StackTrace; Substring],
+                                 [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,24--22,25) IsSynthetic=false;
+                                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,35--22,36) IsSynthetic=false]),
+                              null,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,23--22,45) IsSynthetic=false),
+                           Paren
+                             (Tuple
+                                ([Const
+                                    (Int32 0,
+                                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,46--22,47) IsSynthetic=false);
+                                  Const
+                                    (Int32 5,
+                                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,49--22,50) IsSynthetic=false)],
+                                 [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,47--22,48) IsSynthetic=false],
+                                 D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,46--22,50) IsSynthetic=false),
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,45--22,46) IsSynthetic=false,
                               Some
-                                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,37--21,38) IsSynthetic=false,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,25--21,38) IsSynthetic=false,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,19--21,38) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,6--21,38) IsSynthetic=false),
-                        Paren
-                          (App
-                             (Atomic,false,
-                              LongIdent
-                                (false,
-                                 LongIdentWithDots
-                                   ([e; GetType],
-                                    [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,41--21,42) IsSynthetic=false]),
-                                 null,
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,40--21,49) IsSynthetic=false),
-                              Const
-                                (Unit,
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,49--21,51) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,40--21,51) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,39--21,40) IsSynthetic=false,
-                           Some
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,51--21,52) IsSynthetic=false,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,39--21,52) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,6--21,52) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,2--21,52) IsSynthetic=false),
-                  DoBang
-                    (App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident assertEquals,
-                           Const
-                             (String
-                                ("",
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,19--22,21) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,19--22,21) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,6--22,21) IsSynthetic=false),
-                        Paren
-                          (App
-                             (Atomic,false,
-                              LongIdent
-                                (false,
-                                 LongIdentWithDots
-                                   ([e; StackTrace; Substring],
-                                    [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,24--22,25) IsSynthetic=false;
-                                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,35--22,36) IsSynthetic=false]),
-                                 null,
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,23--22,45) IsSynthetic=false),
-                              Paren
-                                (Tuple
-                                   ([Const
-                                       (Int32 0,
-                                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,46--22,47) IsSynthetic=false);
-                                     Const
-                                       (Int32 5,
-                                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,49--22,50) IsSynthetic=false)],
-                                    [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,47--22,48) IsSynthetic=false],
-                                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,46--22,50) IsSynthetic=false),
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,45--22,46) IsSynthetic=false,
-                                 Some
-                                   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,50--22,51) IsSynthetic=false,
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,45--22,51) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,23--22,51) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,22--22,23) IsSynthetic=false,
-                           Some
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,51--22,52) IsSynthetic=false,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,22--22,52) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,6--22,52) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (22,2--22,52) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (21,2--22,52) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (20,2--22,52) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (19,2--22,52) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (16,2--22,52) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (15,28--23,1) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (15,12--23,1) IsSynthetic=false)
+                                D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,50--22,51) IsSynthetic=false,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,45--22,51) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,23--22,51) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,22--22,23) IsSynthetic=false,
+                        Some
+                          D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,51--22,52) IsSynthetic=false,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,22--22,52) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,6--22,52) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (22,2--22,52) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (21,2--22,52) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (20,2--22,52) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (19,2--22,52) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (16,2--22,52) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (15,28--23,1) IsSynthetic=false)
   .. 識別子: err
- - サポート対象外の式: App
-  (NonAtomic,false,Ident failwith,
-   Const
-     (String
-        ("oops!",
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (25,22--25,29) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (25,22--25,29) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (25,13--25,29) IsSynthetic=false)
-  .. アンダースコアパターン
+Ident: failwith
+  .. Const "oops!"
   .. 名前 'test4' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,
-   App
-     (NonAtomic,false,Ident test,
-      Const
-        (String
-           ("error test",
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (27,17--27,29) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (27,17--27,29) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (27,12--27,29) IsSynthetic=false),
-   CompExpr
-     (false,{contents = false;},
-      Sequential
-        (SequencePointsAtSeq,true,
-         DoBang
-           (App
-              (NonAtomic,false,
-               App
-                 (NonAtomic,false,Ident assertEquals,
-                  Const
-                    (Int32 1,
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (28,19--28,20) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (28,6--28,20) IsSynthetic=false),
-               Const
-                 (Int32 2,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (28,21--28,22) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (28,6--28,22) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (28,2--28,22) IsSynthetic=false),
-         DoBang
-           (App
-              (NonAtomic,false,
-               App
-                 (NonAtomic,false,Ident assertEquals,
-                  Paren
-                    (App
-                       (NonAtomic,false,Ident err,
-                        Const
-                          (Unit,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,24--29,26) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,20--29,26) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,19--29,20) IsSynthetic=false,
-                     Some
-                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,26--29,27) IsSynthetic=false,
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,19--29,27) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,6--29,27) IsSynthetic=false),
+Ident: test
+  .. Const "error test"
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   Sequential
+     (SequencePointsAtSeq,true,
+      DoBang
+        (App
+           (NonAtomic,false,
+            App
+              (NonAtomic,false,Ident assertEquals,
                Const
                  (Int32 1,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,28--29,29) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,6--29,29) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (29,2--29,29) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (28,2--29,29) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (27,30--30,1) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (27,12--30,1) IsSynthetic=false)
-  .. アンダースコアパターン
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (28,19--28,20) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (28,6--28,20) IsSynthetic=false),
+            Const
+              (Int32 2,
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (28,21--28,22) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (28,6--28,22) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (28,2--28,22) IsSynthetic=false),
+      DoBang
+        (App
+           (NonAtomic,false,
+            App
+              (NonAtomic,false,Ident assertEquals,
+               Paren
+                 (App
+                    (NonAtomic,false,Ident err,
+                     Const
+                       (Unit,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,24--29,26) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,20--29,26) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,19--29,20) IsSynthetic=false,
+                  Some
+                    D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,26--29,27) IsSynthetic=false,
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,19--29,27) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,6--29,27) IsSynthetic=false),
+            Const
+              (Int32 1,
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,28--29,29) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,6--29,29) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (29,2--29,29) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (28,2--29,29) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (27,30--30,1) IsSynthetic=false)
   .. 名前 'tests' のパターン
- - サポート対象外の式: ArrayOrListOfSeqExpr
-  (false,
-   CompExpr
-     (true,{contents = true;},
-      Sequential
-        (SequencePointsAtSeq,true,
+ - サポート対象外の式: CompExpr
+  (true,{contents = true;},
+   Sequential
+     (SequencePointsAtSeq,true,
+      App
+        (NonAtomic,false,
          App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident test,
-               Const
-                 (String
-                    ("success test(list)",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,7--33,27) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,7--33,27) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,2--33,27) IsSynthetic=false),
-            CompExpr
-              (false,{contents = false;},
-               DoBang
-                 (App
-                    (NonAtomic,false,
-                     App
-                       (NonAtomic,false,Ident assertEquals,
-                        Const
-                          (Int32 1,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (34,21--34,22) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (34,8--34,22) IsSynthetic=false),
+           (NonAtomic,false,Ident test,
+            Const
+              (String
+                 ("success test(list)",
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,7--34,27) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,7--34,27) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,2--34,27) IsSynthetic=false),
+         CompExpr
+           (false,{contents = false;},
+            DoBang
+              (App
+                 (NonAtomic,false,
+                  App
+                    (NonAtomic,false,Ident assertEquals,
                      Const
                        (Int32 1,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (34,23--34,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (34,8--34,24) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (34,4--34,24) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,28--35,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,2--35,3) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (35,21--35,22) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (35,8--35,22) IsSynthetic=false),
+                  Const
+                    (Int32 1,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (35,23--35,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (35,8--35,24) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (35,4--35,24) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,28--36,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,2--36,3) IsSynthetic=false),
+      App
+        (NonAtomic,false,
          App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident test,
-               Const
-                 (String
-                    ("failure test(list)",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (36,7--36,27) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (36,7--36,27) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (36,2--36,27) IsSynthetic=false),
-            CompExpr
-              (false,{contents = false;},
-               DoBang
-                 (App
-                    (NonAtomic,false,
-                     App
-                       (NonAtomic,false,Ident assertEquals,
-                        Const
-                          (Int32 1,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (37,21--37,22) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (37,8--37,22) IsSynthetic=false),
+           (NonAtomic,false,Ident test,
+            Const
+              (String
+                 ("failure test(list)",
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (37,7--37,27) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (37,7--37,27) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (37,2--37,27) IsSynthetic=false),
+         CompExpr
+           (false,{contents = false;},
+            DoBang
+              (App
+                 (NonAtomic,false,
+                  App
+                    (NonAtomic,false,Ident assertEquals,
                      Const
-                       (Int32 2,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (37,23--37,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (37,8--37,24) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (37,4--37,24) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (36,28--38,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (36,2--38,3) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,2--38,3) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (33,2--38,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (32,12--39,1) IsSynthetic=false)
-  .. アンダースコアパターン
+                       (Int32 1,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (38,21--38,22) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (38,8--38,22) IsSynthetic=false),
+                  Const
+                    (Int32 2,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (38,23--38,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (38,8--38,24) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (38,4--38,24) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (37,28--39,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (37,2--39,3) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,2--39,3) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (34,2--39,3) IsSynthetic=false)
   .. 名前 'tests2' のパターン
- - サポート対象外の式: ArrayOrListOfSeqExpr
-  (true,
-   CompExpr
-     (true,{contents = true;},
-      Sequential
-        (SequencePointsAtSeq,true,
+ - サポート対象外の式: CompExpr
+  (true,{contents = true;},
+   Sequential
+     (SequencePointsAtSeq,true,
+      App
+        (NonAtomic,false,
          App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident test,
-               Const
-                 (String
-                    ("success test1(array)",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,7--42,29) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,7--42,29) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,2--42,29) IsSynthetic=false),
-            CompExpr
-              (false,{contents = false;},
-               DoBang
-                 (App
-                    (NonAtomic,false,
-                     App
-                       (NonAtomic,false,Ident assertEquals,
-                        Const
-                          (Int32 1,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (43,21--43,22) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (43,8--43,22) IsSynthetic=false),
+           (NonAtomic,false,Ident test,
+            Const
+              (String
+                 ("success test1(array)",
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,7--43,29) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,7--43,29) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,2--43,29) IsSynthetic=false),
+         CompExpr
+           (false,{contents = false;},
+            DoBang
+              (App
+                 (NonAtomic,false,
+                  App
+                    (NonAtomic,false,Ident assertEquals,
                      Const
                        (Int32 1,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (43,23--43,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (43,8--43,24) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (43,4--43,24) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,30--44,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,2--44,3) IsSynthetic=false),
-         Sequential
-           (SequencePointsAtSeq,true,
-            App
-              (NonAtomic,false,
-               App
-                 (NonAtomic,false,Ident test,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (44,21--44,22) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (44,8--44,22) IsSynthetic=false),
                   Const
-                    (String
-                       ("success test2(array)",
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (45,7--45,29) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (45,7--45,29) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (45,2--45,29) IsSynthetic=false),
-               CompExpr
-                 (false,{contents = false;},
-                  DoBang
-                    (App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident assertEquals,
-                           Const
-                             (Int32 1,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (46,21--46,22) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (46,8--46,22) IsSynthetic=false),
-                        Const
-                          (Int32 1,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (46,23--46,24) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (46,8--46,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (46,4--46,24) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (45,30--47,3) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (45,2--47,3) IsSynthetic=false),
-            App
-              (NonAtomic,false,
-               App
-                 (NonAtomic,false,Ident test,
-                  Const
-                    (String
-                       ("failure test(array)",
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (48,7--48,28) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (48,7--48,28) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (48,2--48,28) IsSynthetic=false),
-               CompExpr
-                 (false,{contents = false;},
-                  DoBang
-                    (App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident assertEquals,
-                           Const
-                             (Int32 1,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (49,21--49,22) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (49,8--49,22) IsSynthetic=false),
-                        Const
-                          (Int32 2,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (49,23--49,24) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (49,8--49,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (49,4--49,24) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (48,29--50,3) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (48,2--50,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (45,2--50,3) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,2--50,3) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (42,2--50,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (41,13--51,2) IsSynthetic=false)
-  .. アンダースコアパターン
-  .. 名前 'tests3' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,Ident seq,
-   CompExpr
-     (false,{contents = false;},
-      YieldOrReturn
-        ((true, false),
+                    (Int32 1,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (44,23--44,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (44,8--44,24) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (44,4--44,24) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,30--45,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,2--45,3) IsSynthetic=false),
+      Sequential
+        (SequencePointsAtSeq,true,
          App
            (NonAtomic,false,
             App
               (NonAtomic,false,Ident test,
                Const
                  (String
-                    ("failure test(seq)",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (54,13--54,32) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (54,13--54,32) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (54,8--54,32) IsSynthetic=false),
+                    ("success test2(array)",
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (46,7--46,29) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (46,7--46,29) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (46,2--46,29) IsSynthetic=false),
             CompExpr
               (false,{contents = false;},
                DoBang
@@ -515,92 +374,169 @@
                        (NonAtomic,false,Ident assertEquals,
                         Const
                           (Int32 1,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (55,21--55,22) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (55,8--55,22) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (47,21--47,22) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (47,8--47,22) IsSynthetic=false),
                      Const
-                       (Int32 2,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (55,23--55,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (55,8--55,24) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (55,4--55,24) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (54,33--56,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (54,8--56,3) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (54,2--56,3) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (53,17--57,1) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (53,13--57,1) IsSynthetic=false)
-  .. アンダースコアパターン
-  .. 名前 'tests4' のパターン
- - サポート対象外の式: ArrayOrListOfSeqExpr
-  (false,
-   CompExpr
-     (true,{contents = true;},
-      Sequential
-        (SequencePointsAtSeq,true,
+                       (Int32 1,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (47,23--47,24) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (47,8--47,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (47,4--47,24) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (46,30--48,3) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (46,2--48,3) IsSynthetic=false),
          App
            (NonAtomic,false,
             App
               (NonAtomic,false,Ident test,
                Const
                  (String
-                    ("success test(list with value)",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,7--60,38) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,7--60,38) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,2--60,38) IsSynthetic=false),
+                    ("failure test(array)",
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (49,7--49,28) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (49,7--49,28) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (49,2--49,28) IsSynthetic=false),
             CompExpr
               (false,{contents = false;},
+               DoBang
+                 (App
+                    (NonAtomic,false,
+                     App
+                       (NonAtomic,false,Ident assertEquals,
+                        Const
+                          (Int32 1,
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (50,21--50,22) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (50,8--50,22) IsSynthetic=false),
+                     Const
+                       (Int32 2,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (50,23--50,24) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (50,8--50,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (50,4--50,24) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (49,29--51,3) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (49,2--51,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (46,2--51,3) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,2--51,3) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (43,2--51,3) IsSynthetic=false)
+  .. 名前 'tests3' のパターン
+Ident: seq
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   YieldOrReturn
+     ((true, false),
+      App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident test,
+            Const
+              (String
+                 ("failure test(seq)",
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (55,13--55,32) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (55,13--55,32) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (55,8--55,32) IsSynthetic=false),
+         CompExpr
+           (false,{contents = false;},
+            DoBang
+              (App
+                 (NonAtomic,false,
+                  App
+                    (NonAtomic,false,Ident assertEquals,
+                     Const
+                       (Int32 1,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (56,21--56,22) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (56,8--56,22) IsSynthetic=false),
+                  Const
+                    (Int32 2,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (56,23--56,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (56,8--56,24) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (56,4--56,24) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (55,33--57,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (55,8--57,3) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (55,2--57,3) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (54,17--58,1) IsSynthetic=false)
+  .. 名前 'tests4' のパターン
+ - サポート対象外の式: CompExpr
+  (true,{contents = true;},
+   Sequential
+     (SequencePointsAtSeq,true,
+      App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident test,
+            Const
+              (String
+                 ("success test(list with value)",
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,7--61,38) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,7--61,38) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,2--61,38) IsSynthetic=false),
+         CompExpr
+           (false,{contents = false;},
+            YieldOrReturn
+              ((false, true),
+               Const
+                 (Int32 10,
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (62,11--62,13) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (62,4--62,13) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,39--63,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,2--63,3) IsSynthetic=false),
+      App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident test,
+            Const
+              (String
+                 ("failure test(list with value)",
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (64,7--64,38) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (64,7--64,38) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (64,2--64,38) IsSynthetic=false),
+         CompExpr
+           (false,{contents = false;},
+            Sequential
+              (SequencePointsAtSeq,true,
+               DoBang
+                 (App
+                    (NonAtomic,false,
+                     App
+                       (NonAtomic,false,Ident assertEquals,
+                        Const
+                          (Int32 1,
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (65,21--65,22) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (65,8--65,22) IsSynthetic=false),
+                     Const
+                       (Int32 2,
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (65,23--65,24) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (65,8--65,24) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (65,4--65,24) IsSynthetic=false),
                YieldOrReturn
                  ((false, true),
                   Const
-                    (Int32 10,
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (61,11--61,13) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (61,4--61,13) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,39--62,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,2--62,3) IsSynthetic=false),
-         App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident test,
-               Const
-                 (String
-                    ("failure test(list with value)",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (63,7--63,38) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (63,7--63,38) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (63,2--63,38) IsSynthetic=false),
-            CompExpr
-              (false,{contents = false;},
-               Sequential
-                 (SequencePointsAtSeq,true,
-                  DoBang
-                    (App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident assertEquals,
-                           Const
-                             (Int32 1,
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (64,21--64,22) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (64,8--64,22) IsSynthetic=false),
-                        Const
-                          (Int32 2,
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (64,23--64,24) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (64,8--64,24) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (64,4--64,24) IsSynthetic=false),
-                  YieldOrReturn
-                    ((false, true),
-                     Const
-                       (Int32 20,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (65,11--65,13) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (65,4--65,13) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (64,4--65,13) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (63,39--66,3) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (63,2--66,3) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,2--66,3) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (60,2--66,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (59,13--67,1) IsSynthetic=false)
-  .. アンダースコアパターン
+                    (Int32 20,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (66,11--66,13) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (66,4--66,13) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (65,4--66,13) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (64,39--67,3) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (64,2--67,3) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,2--67,3) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (61,2--67,3) IsSynthetic=false)
   .. 名前 'tests5' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,Ident parameterize,
-   CompExpr
-     (false,{contents = false;},
+Ident: parameterize
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   Sequential
+     (SequencePointsAtSeq,true,
+      App
+        (NonAtomic,false,Ident case,
+         Paren
+           (Tuple
+              ([Const
+                  (Int32 1,
+                   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,10--72,11) IsSynthetic=false);
+                Const
+                  (Int32 1,
+                   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,13--72,14) IsSynthetic=false)],
+               [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,11--72,12) IsSynthetic=false],
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,10--72,14) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,9--72,10) IsSynthetic=false,
+            Some
+              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,14--72,15) IsSynthetic=false,
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,9--72,15) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,4--72,15) IsSynthetic=false),
       Sequential
         (SequencePointsAtSeq,true,
          App
@@ -609,400 +545,226 @@
               (Tuple
                  ([Const
                      (Int32 1,
-                      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,10--71,11) IsSynthetic=false);
+                      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,10--73,11) IsSynthetic=false);
                    Const
-                     (Int32 1,
-                      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,13--71,14) IsSynthetic=false)],
-                  [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,11--71,12) IsSynthetic=false],
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,10--71,14) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,9--71,10) IsSynthetic=false,
+                     (Int32 2,
+                      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,13--73,14) IsSynthetic=false)],
+                  [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,11--73,12) IsSynthetic=false],
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,10--73,14) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,9--73,10) IsSynthetic=false,
                Some
-                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,14--71,15) IsSynthetic=false,
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,9--71,15) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,4--71,15) IsSynthetic=false),
-         Sequential
-           (SequencePointsAtSeq,true,
-            App
-              (NonAtomic,false,Ident case,
-               Paren
-                 (Tuple
-                    ([Const
-                        (Int32 1,
-                         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,10--72,11) IsSynthetic=false);
-                      Const
-                        (Int32 2,
-                         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,13--72,14) IsSynthetic=false)],
-                     [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,11--72,12) IsSynthetic=false],
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,10--72,14) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,9--72,10) IsSynthetic=false,
-                  Some
-                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,14--72,15) IsSynthetic=false,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,9--72,15) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,4--72,15) IsSynthetic=false),
-            App
-              (NonAtomic,false,Ident run,
-               Paren
-                 (Lambda
-                    (false,false,
-                     SimplePats
-                       ([Id
-                           (x,null,false,false,false,
-                            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,14--73,15) IsSynthetic=false);
-                         Id
-                           (y,null,false,false,false,
-                            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,17--73,18) IsSynthetic=false)],
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,14--73,18) IsSynthetic=false),
+                 D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,14--73,15) IsSynthetic=false,
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,9--73,15) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,4--73,15) IsSynthetic=false),
+         App
+           (NonAtomic,false,Ident run,
+            Paren
+              (Lambda
+                 (false,false,
+                  SimplePats
+                    ([Id
+                        (x,null,false,false,false,
+                         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,14--74,15) IsSynthetic=false);
+                      Id
+                        (y,null,false,false,false,
+                         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,17--74,18) IsSynthetic=false)],
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,14--74,18) IsSynthetic=false),
+                  App
+                    (NonAtomic,false,
                      App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident test,
-                           Const
-                             (String
-                                ("case parameterize test",
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,28--73,52) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,28--73,52) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,23--73,52) IsSynthetic=false),
-                        CompExpr
-                          (false,{contents = false;},
-                           DoBang
-                             (App
-                                (NonAtomic,false,
-                                 App
-                                   (NonAtomic,false,Ident assertEquals,Ident x,
-                                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (74,10--74,24) IsSynthetic=false),
-                                 Ident y,
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (74,10--74,26) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (74,6--74,26) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,53--75,5) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,23--75,5) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,9--75,5) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,8--73,9) IsSynthetic=false,
-                  Some
-                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (75,5--75,6) IsSynthetic=false,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,8--75,6) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (73,4--75,6) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (72,4--75,6) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (71,4--75,6) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (70,15--76,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (70,2--76,3) IsSynthetic=false)
-  .. アンダースコアパターン
+                       (NonAtomic,false,Ident test,
+                        Const
+                          (String
+                             ("case parameterize test",
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,28--74,52) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,28--74,52) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,23--74,52) IsSynthetic=false),
+                     CompExpr
+                       (false,{contents = false;},
+                        DoBang
+                          (App
+                             (NonAtomic,false,
+                              App
+                                (NonAtomic,false,Ident assertEquals,Ident x,
+                                 D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (75,10--75,24) IsSynthetic=false),
+                              Ident y,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (75,10--75,26) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (75,6--75,26) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,53--76,5) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,23--76,5) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,9--76,5) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,8--74,9) IsSynthetic=false,
+               Some
+                 D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (76,5--76,6) IsSynthetic=false,
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,8--76,6) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (74,4--76,6) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (73,4--76,6) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (72,4--76,6) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (71,15--77,3) IsSynthetic=false)
   .. 名前 'tests6' のパターン
 以下のバインディングを含むLetOrUse:
   .. 識別子: innerTest
- - サポート対象外の式: App
-  (NonAtomic,false,
-   App
-     (NonAtomic,false,Ident test,
-      Const
-        (String
-           ("source parameterize test",
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (79,30--79,56) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (79,30--79,56) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (79,25--79,56) IsSynthetic=false),
-   CompExpr
-     (false,{contents = false;},
-      DoBang
-        (App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident assertEquals,Ident x,
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (80,8--80,22) IsSynthetic=false),
-            Ident y,
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (80,8--80,24) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (80,4--80,24) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (79,57--81,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (79,25--81,3) IsSynthetic=false)
+Ident: test
+  .. Const "source parameterize test"
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   DoBang
+     (App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident assertEquals,Ident x,
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (81,8--81,22) IsSynthetic=false),
+         Ident y,
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (81,8--81,24) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (81,4--81,24) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (80,57--82,3) IsSynthetic=false)
 本体は以下:
- - サポート対象外の式: App
-  (NonAtomic,false,Ident parameterize,
-   CompExpr
-     (false,{contents = false;},
-      Sequential
-        (SequencePointsAtSeq,true,
-         App
-           (NonAtomic,false,Ident source,
-            ArrayOrListOfSeqExpr
-              (false,
-               CompExpr
-                 (true,{contents = true;},
-                  Sequential
-                    (SequencePointsAtSeq,true,
-                     Paren
-                       (Tuple
-                          ([Const
-                              (Int32 1,
-                               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,7--84,8) IsSynthetic=false);
-                            Const
-                              (Int32 1,
-                               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,10--84,11) IsSynthetic=false)],
-                           [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,8--84,9) IsSynthetic=false],
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,7--84,11) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,6--84,7) IsSynthetic=false,
-                        Some
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,11--84,12) IsSynthetic=false,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,6--84,12) IsSynthetic=false),
-                     Paren
-                       (Tuple
-                          ([Const
-                              (Int32 1,
-                               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,7--85,8) IsSynthetic=false);
-                            Const
-                              (Int32 2,
-                               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,10--85,11) IsSynthetic=false)],
-                           [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,8--85,9) IsSynthetic=false],
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,7--85,11) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,6--85,7) IsSynthetic=false,
-                        Some
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,11--85,12) IsSynthetic=false,
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (85,6--85,12) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,6--85,12) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (84,6--85,12) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (83,11--86,5) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (83,4--86,5) IsSynthetic=false),
-         App
-           (NonAtomic,false,Ident run,Ident innerTest,
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (87,4--87,17) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (83,4--87,17) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (82,15--88,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (82,2--88,3) IsSynthetic=false)
-  .. アンダースコアパターン
+Ident: parameterize
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   Sequential
+     (SequencePointsAtSeq,true,
+      App
+        (NonAtomic,false,Ident source,
+         ArrayOrListOfSeqExpr
+           (false,
+            CompExpr
+              (true,{contents = true;},
+               Sequential
+                 (SequencePointsAtSeq,true,
+                  Paren
+                    (Tuple
+                       ([Const
+                           (Int32 1,
+                            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,7--85,8) IsSynthetic=false);
+                         Const
+                           (Int32 1,
+                            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,10--85,11) IsSynthetic=false)],
+                        [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,8--85,9) IsSynthetic=false],
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,7--85,11) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,6--85,7) IsSynthetic=false,
+                     Some
+                       D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,11--85,12) IsSynthetic=false,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,6--85,12) IsSynthetic=false),
+                  Paren
+                    (Tuple
+                       ([Const
+                           (Int32 1,
+                            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,7--86,8) IsSynthetic=false);
+                         Const
+                           (Int32 2,
+                            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,10--86,11) IsSynthetic=false)],
+                        [D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,8--86,9) IsSynthetic=false],
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,7--86,11) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,6--86,7) IsSynthetic=false,
+                     Some
+                       D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,11--86,12) IsSynthetic=false,
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (86,6--86,12) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,6--86,12) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (85,6--86,12) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (84,11--87,5) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (84,4--87,5) IsSynthetic=false),
+      App
+        (NonAtomic,false,Ident run,Ident innerTest,
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (88,4--88,17) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (84,4--88,17) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (83,15--89,3) IsSynthetic=false)
   .. 名前 'context1' のパターン
- - サポート対象外の式: App
-  (NonAtomic,false,
+Ident: context
+  .. Const "Hoge"
+ - サポート対象外の式: CompExpr
+  (true,{contents = true;},
    App
-     (NonAtomic,false,Ident context,
-      Const
-        (String
-           ("Hoge",
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (91,10--91,16) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (91,10--91,16) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (91,2--91,16) IsSynthetic=false),
-   ArrayOrListOfSeqExpr
-     (false,
-      CompExpr
-        (true,{contents = true;},
-         App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident context,
-               Const
-                 (String
-                    ("Piyo",
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (92,12--92,18) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (92,12--92,18) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (92,4--92,18) IsSynthetic=false),
-            ArrayOrListOfSeqExpr
-              (false,
-               CompExpr
-                 (true,{contents = true;},
-                  Sequential
-                    (SequencePointsAtSeq,true,
-                     App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident test,
+     (NonAtomic,false,
+      App
+        (NonAtomic,false,Ident context,
+         Const
+           (String
+              ("Piyo",
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (94,16--94,22) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (94,16--94,22) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (94,8--94,22) IsSynthetic=false),
+      ArrayOrListOfSeqExpr
+        (false,
+         CompExpr
+           (true,{contents = true;},
+            Sequential
+              (SequencePointsAtSeq,true,
+               App
+                 (NonAtomic,false,
+                  App
+                    (NonAtomic,false,Ident test,
+                     Const
+                       (String
+                          ("success(context)",
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,17--95,35) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,17--95,35) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,12--95,35) IsSynthetic=false),
+                  CompExpr
+                    (false,{contents = false;},
+                     DoBang
+                       (App
+                          (NonAtomic,false,
+                           App
+                             (NonAtomic,false,Ident assertEquals,
+                              Const
+                                (Int32 1,
+                                 D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (96,33--96,34) IsSynthetic=false),
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (96,20--96,34) IsSynthetic=false),
                            Const
-                             (String
-                                ("success(context)",
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,11--93,29) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,11--93,29) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,6--93,29) IsSynthetic=false),
-                        CompExpr
-                          (false,{contents = false;},
-                           DoBang
-                             (App
-                                (NonAtomic,false,
-                                 App
-                                   (NonAtomic,false,Ident assertEquals,
-                                    Const
-                                      (Int32 1,
-                                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (94,25--94,26) IsSynthetic=false),
-                                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (94,12--94,26) IsSynthetic=false),
-                                 Const
-                                   (Int32 1,
-                                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (94,27--94,28) IsSynthetic=false),
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (94,12--94,28) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (94,8--94,28) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,30--95,7) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,6--95,7) IsSynthetic=false),
-                     App
-                       (NonAtomic,false,
-                        App
-                          (NonAtomic,false,Ident test,
+                             (Int32 1,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (96,35--96,36) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (96,20--96,36) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (96,16--96,36) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,36--97,13) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,12--97,13) IsSynthetic=false),
+               App
+                 (NonAtomic,false,
+                  App
+                    (NonAtomic,false,Ident test,
+                     Const
+                       (String
+                          ("failure(context)",
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (98,17--98,35) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (98,17--98,35) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (98,12--98,35) IsSynthetic=false),
+                  CompExpr
+                    (false,{contents = false;},
+                     DoBang
+                       (App
+                          (NonAtomic,false,
+                           App
+                             (NonAtomic,false,Ident assertEquals,
+                              Const
+                                (Int32 1,
+                                 D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (99,33--99,34) IsSynthetic=false),
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (99,20--99,34) IsSynthetic=false),
                            Const
-                             (String
-                                ("failure(context)",
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (96,11--96,29) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (96,11--96,29) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (96,6--96,29) IsSynthetic=false),
-                        CompExpr
-                          (false,{contents = false;},
-                           DoBang
-                             (App
-                                (NonAtomic,false,
-                                 App
-                                   (NonAtomic,false,Ident assertEquals,
-                                    Const
-                                      (Int32 1,
-                                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (97,25--97,26) IsSynthetic=false),
-                                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (97,12--97,26) IsSynthetic=false),
-                                 Const
-                                   (Int32 2,
-                                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (97,27--97,28) IsSynthetic=false),
-                                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (97,12--97,28) IsSynthetic=false),
-                              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (97,8--97,28) IsSynthetic=false),
-                           C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (96,30--98,7) IsSynthetic=false),
-                        C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (96,6--98,7) IsSynthetic=false),
-                     C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,6--98,7) IsSynthetic=false),
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (93,6--98,7) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (92,19--99,5) IsSynthetic=false),
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (92,4--99,5) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (92,4--99,5) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (91,17--100,3) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (91,2--100,3) IsSynthetic=false)
- - サポート対象外の宣言: Types
-  ([TypeDefn
-      (ComponentInfo
-         ([],[],[],[MyClass],
-          PreXmlDoc
-            (Microsoft.FSharp.Compiler.Range+pos,
-             Microsoft.FSharp.Compiler.Ast+XmlDocCollector),false,null,
-          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (102,5--102,12) IsSynthetic=false),
-       ObjectModel
-         (TyconUnspecified,
-          [ImplicitCtor
-             (null,[],[],null,
-              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (102,5--102,12) IsSynthetic=false);
-           Member
-             (Binding
-                (null,NormalBinding,false,false,[],
-                 PreXmlDoc
-                   (Microsoft.FSharp.Compiler.Range+pos,
-                    Microsoft.FSharp.Compiler.Ast+XmlDocCollector),
-                 SynValData
-                   (Some {IsInstance = true;
-                          IsDispatchSlot = false;
-                          IsOverrideOrExplicitImpl = false;
-                          IsFinal = false;
-                          MemberKind = Member;},
-                    SynValInfo
-                      ([[SynArgInfo ([],false,null)]; []],
-                       SynArgInfo ([],false,null)),null),
-                 LongIdent
-                   (LongIdentWithDots
-                      ([__; test],
-                       [C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,11--103,12) IsSynthetic=false]),
-                    null,null,
-                    Pats
-                      [Paren
-                         (Const
-                            (Unit,
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,16--103,18) IsSynthetic=false),
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,16--103,18) IsSynthetic=false)],
-                    null,
-                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,9--103,18) IsSynthetic=false),
-                 null,
-                 App
-                   (NonAtomic,false,
-                    App
-                      (NonAtomic,false,Ident test,
-                       Const
-                         (String
-                            ("not execute because this is instance method",
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,26--103,71) IsSynthetic=false),
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,26--103,71) IsSynthetic=false),
-                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,21--103,71) IsSynthetic=false),
-                    CompExpr
-                      (false,{contents = false;},
-                       DoBang
-                         (App
-                            (NonAtomic,false,
-                             App
-                               (NonAtomic,false,Ident assertEquals,
-                                Const
-                                  (Int32 1,
-                                   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (104,21--104,22) IsSynthetic=false),
-                                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (104,8--104,22) IsSynthetic=false),
-                             Const
-                               (Int32 2,
-                                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (104,23--104,24) IsSynthetic=false),
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (104,8--104,24) IsSynthetic=false),
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (104,4--104,24) IsSynthetic=false),
-                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,72--105,3) IsSynthetic=false),
-                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,21--105,3) IsSynthetic=false),
-                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,9--103,18) IsSynthetic=false,
-                 NoSequencePointAtInvisibleBinding),
-              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,9--105,3) IsSynthetic=false);
-           Member
-             (Binding
-                (null,NormalBinding,false,false,[],
-                 PreXmlDoc
-                   (Microsoft.FSharp.Compiler.Range+pos,
-                    Microsoft.FSharp.Compiler.Ast+XmlDocCollector),
-                 SynValData
-                   (Some {IsInstance = false;
-                          IsDispatchSlot = false;
-                          IsOverrideOrExplicitImpl = false;
-                          IsFinal = false;
-                          MemberKind = Member;},
-                    SynValInfo ([[]],SynArgInfo ([],false,null)),null),
-                 Named
-                   (Wild
-                      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,16--106,21) IsSynthetic=false,
-                    test2,false,null,
-                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,16--106,21) IsSynthetic=false),
-                 null,
-                 App
-                   (NonAtomic,false,
-                    App
-                      (NonAtomic,false,Ident test,
-                       Const
-                         (String
-                            ("failure test(static property)",
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,29--106,60) IsSynthetic=false),
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,29--106,60) IsSynthetic=false),
-                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,24--106,60) IsSynthetic=false),
-                    CompExpr
-                      (false,{contents = false;},
-                       DoBang
-                         (App
-                            (NonAtomic,false,
-                             App
-                               (NonAtomic,false,Ident assertEquals,
-                                Const
-                                  (Int32 1,
-                                   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (107,21--107,22) IsSynthetic=false),
-                                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (107,8--107,22) IsSynthetic=false),
-                             Const
-                               (Int32 2,
-                                C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (107,23--107,24) IsSynthetic=false),
-                             C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (107,8--107,24) IsSynthetic=false),
-                          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (107,4--107,24) IsSynthetic=false),
-                       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,61--108,3) IsSynthetic=false),
-                    C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,24--108,3) IsSynthetic=false),
-                 C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,16--106,21) IsSynthetic=false,
-                 NoSequencePointAtInvisibleBinding),
-              C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (106,16--108,3) IsSynthetic=false)],
-          C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (103,2--108,3) IsSynthetic=false),
-       [],
-       C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (102,5--108,3) IsSynthetic=false)],
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (102,0--108,3) IsSynthetic=false)
+                             (Int32 2,
+                              D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (99,35--99,36) IsSynthetic=false),
+                           D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (99,20--99,36) IsSynthetic=false),
+                        D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (99,16--99,36) IsSynthetic=false),
+                     D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (98,36--100,13) IsSynthetic=false),
+                  D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (98,12--100,13) IsSynthetic=false),
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,12--100,13) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (95,12--100,13) IsSynthetic=false),
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (94,23--101,9) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (94,8--101,9) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (94,8--101,9) IsSynthetic=false)
   .. 識別子: helperTest
- - サポート対象外の式: App
-  (NonAtomic,false,Ident assertions,
-   CompExpr
-     (false,{contents = false;},
-      DoBang
-        (App
-           (NonAtomic,false,
-            App
-              (NonAtomic,false,Ident assertEquals,
-               Const
-                 (Int32 1,
-                  C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (112,19--112,20) IsSynthetic=false),
-               C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (112,6--112,20) IsSynthetic=false),
-            Ident x,
-            C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (112,6--112,22) IsSynthetic=false),
-         C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (112,2--112,22) IsSynthetic=false),
-      C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (111,30--113,1) IsSynthetic=false),
-   C:\PROJECT\Persimmon\examples\Persimmon.Sample\Sample.fs (111,19--113,1) IsSynthetic=false)
+Ident: assertions
+ - サポート対象外の式: CompExpr
+  (false,{contents = false;},
+   DoBang
+     (App
+        (NonAtomic,false,
+         App
+           (NonAtomic,false,Ident assertEquals,
+            Const
+              (Int32 1,
+               D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (115,19--115,20) IsSynthetic=false),
+            D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (115,6--115,20) IsSynthetic=false),
+         Ident x,
+         D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (115,6--115,22) IsSynthetic=false),
+      D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (115,2--115,22) IsSynthetic=false),
+   D:\PROJECT\FSharp.Compiler.Services.Tests\FSharp.Compiler.Services.Tests\bin\Debug\Sample.fs (114,30--116,1) IsSynthetic=false)
