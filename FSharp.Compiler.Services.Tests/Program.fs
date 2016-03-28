@@ -37,56 +37,57 @@ module Hoge =
 //        let r17ref = results.GetUsesOfSymbol(re.[17] |> snd) |> Async.RunSynchronously
 //        let r70ref = results.GetUsesOfSymbol(r2.[70].Symbol) |> Async.RunSynchronously
 
-        let rec visitPattern = function
+        let rec visitPattern (indent: string) = function
 //          | SynPat.Wild(_) -> 
-//              printfn "  .. アンダースコアパターン"
+//              printfn "%sアンダースコアパターン"
           | SynPat.Named(pat, name, _, _, _) ->
-              visitPattern pat
-              printfn "  .. 名前 '%s' のパターン" name.idText
+              visitPattern (indent + "  ") pat
+              printfn "%s名前 '%s' のパターン" indent name.idText
           | SynPat.LongIdent(LongIdentWithDots(ident, _), _, _, _, _, _) ->
               let names = String.concat "." [ for i in ident -> i.idText ]
-              printfn "  .. 識別子: %s" names
-//        | pat -> printfn "  .. その他のパターン: %A" pat
+              printfn "%s識別子: %s" indent names
+//        | pat -> printfn "%sその他のパターン: %A" pat
           | _ -> ()
 
-        let visitConst = function
+        let visitConst (indent: string) = function
           | SynConst.String(str, _) ->
-              printfn "  .. Const \"%s\"" str
+              printfn "%sConst \"%s\"" indent str
           | _ -> ()
 
-        let rec visitExpression = function
+        let rec visitExpression (indent: string) = function
 //          | SynExpr.IfThenElse(cond, trueBranch, falseBranchOpt, _, _, _, _) ->
 //              // すべての部分式を走査
 //              printfn "条件部:"
 //              visitExpression cond
 //              visitExpression trueBranch
 //              falseBranchOpt |> Option.iter visitExpression 
-
           | SynExpr.LetOrUse(_, _, bindings, body, _) ->
               // バインディングを走査
               // ('let .. = .. and .. = .. in ...' に対しては複数回走査されることがある)
-              printfn "以下のバインディングを含むLetOrUse:"
+              printfn "%s以下のバインディングを含むLetOrUse:" indent
               for binding in bindings do
                 let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
                              data, pat, retInfo, init, m, sp)) = binding
-                visitPattern pat 
-                visitExpression init
+                visitPattern (indent + "  ") pat
+                visitExpression (indent + "  ") init
               // 本体の式を走査
-              printfn "本体は以下:"
-              visitExpression body
+              printfn "%s本体は以下:" indent
+              visitExpression (indent + "  ") body
           | SynExpr.App(_, _, expr0, expr1, _) ->
-              visitExpression expr0
-              visitExpression expr1
+              visitExpression (indent + "  ") expr0
+              visitExpression (indent + "  ") expr1
           | SynExpr.Ident id ->
-              printfn "Ident: %A" id
+              printfn "%sIdent: %A" indent id
           | SynExpr.Const(c, _) ->
-              visitConst c
+              visitConst (indent + "  ") c
           | SynExpr.ArrayOrListOfSeqExpr(_, expr, _) ->
-              visitExpression expr
-          | expr -> printfn " - サポート対象外の式: %A" expr
-//          | _ -> ()
+              visitExpression (indent + "  ") expr
+          | SynExpr.CompExpr(_, _, expr, _) ->
+              visitExpression (indent + "  ") expr
+//          | expr -> printfn "%sサポート対象外の式: %A" indent expr
+          | _ -> ()
 
-        let visitDeclarations decls = 
+        let visitDeclarations (indent: string) decls = 
             for declaration in decls do
             match declaration with
             | SynModuleDecl.Let(isRec, bindings, range) ->
@@ -96,22 +97,22 @@ module Hoge =
                 for binding in bindings do
                     let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
                                 data, pat, retInfo, body, m, sp)) = binding
-                    visitPattern pat 
-                    visitExpression body         
-//            | _ -> printfn " - サポート対象外の宣言: %A" declaration
+                    visitPattern (indent + "  ") pat
+                    visitExpression (indent + "  ") body
+//            | _ -> printfn "%sサポート対象外の宣言: %A" indent declaration
             | _ -> ()
 
-        let visitModulesAndNamespaces modulesOrNss =
+        let visitModulesAndNamespaces (indent: string) modulesOrNss =
           for moduleOrNs in modulesOrNss do
             let (SynModuleOrNamespace(lid, isMod, decls, xml, attrs, _, m)) = moduleOrNs
-            printfn "名前空間またはモジュール: %A" lid
-            visitDeclarations decls
+            printfn "%s名前空間またはモジュール: %A" indent lid
+            visitDeclarations "  " decls
 
         match results.ParseTree.Value with
         | ParsedInput.ImplFile(implFile) ->
             // 宣言を展開してそれぞれを走査する
             let (ParsedImplFileInput(fn, script, name, _, _, modules, _)) = implFile
-            visitModulesAndNamespaces modules
+            visitModulesAndNamespaces "" modules
         | _ -> failwith "F# インターフェイスファイル (*.fsi) は未サポートです。"
 
 
