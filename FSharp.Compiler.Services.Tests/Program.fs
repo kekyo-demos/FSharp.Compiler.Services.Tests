@@ -42,16 +42,16 @@ module Hoge =
 //              printfn "%sアンダースコアパターン"
           | SynPat.Named(pat, name, _, _, _) ->
               visitPattern (indent + "  ") pat
-              printfn "%s名前 '%s' のパターン" indent name.idText
+              printfn "%sNamed: '%s'" indent name.idText
           | SynPat.LongIdent(LongIdentWithDots(ident, _), _, _, _, _, _) ->
               let names = String.concat "." [ for i in ident -> i.idText ]
-              printfn "%s識別子: %s" indent names
+              printfn "%sLongIdent: %s" indent names
 //        | pat -> printfn "%sその他のパターン: %A" pat
           | _ -> ()
 
         let visitConst (indent: string) = function
           | SynConst.String(str, _) ->
-              printfn "%sConst \"%s\"" indent str
+              printfn "%sString: \"%s\"" indent str
           | _ -> ()
 
         let rec visitExpression (indent: string) = function
@@ -64,26 +64,38 @@ module Hoge =
           | SynExpr.LetOrUse(_, _, bindings, body, _) ->
               // バインディングを走査
               // ('let .. = .. and .. = .. in ...' に対しては複数回走査されることがある)
-              printfn "%s以下のバインディングを含むLetOrUse:" indent
+              printfn "%sLetOrUse (Expr):" indent
               for binding in bindings do
                 let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
                              data, pat, retInfo, init, m, sp)) = binding
                 visitPattern (indent + "  ") pat
                 visitExpression (indent + "  ") init
               // 本体の式を走査
-              printfn "%s本体は以下:" indent
+              printfn "%sLetOrUse (Body):" indent
               visitExpression (indent + "  ") body
           | SynExpr.App(_, _, expr0, expr1, _) ->
+              printfn "%sApp (Expr0):" indent
               visitExpression (indent + "  ") expr0
+              printfn "%sApp (Expr1):" indent
               visitExpression (indent + "  ") expr1
           | SynExpr.Ident id ->
               printfn "%sIdent: %A" indent id
           | SynExpr.Const(c, _) ->
+              printfn "%sConst:" indent
               visitConst (indent + "  ") c
           | SynExpr.ArrayOrListOfSeqExpr(_, expr, _) ->
+              printfn "%sArrayOrListOfSeqExpr:" indent
               visitExpression (indent + "  ") expr
           | SynExpr.CompExpr(_, _, expr, _) ->
+              printfn "%sCompExpr:" indent
               visitExpression (indent + "  ") expr
+          | SynExpr.Sequential(info, _, expr0, expr1, _) ->
+              printfn "%sSequential: %A" indent info
+              let indent1 = indent + "  "
+              printfn "%s[0]:" indent1
+              visitExpression (indent1 + "  ") expr0
+              printfn "%s[1]:" indent1
+              visitExpression (indent1 + "  ") expr1
 //          | expr -> printfn "%sサポート対象外の式: %A" indent expr
           | _ -> ()
 
@@ -94,6 +106,7 @@ module Hoge =
                 // 宣言としてのletバインディングは
                 // (visitExpressionで処理したような)式としてのletバインディングと
                 // 似ているが、本体を持たない
+                printfn "%slet bindings:" indent
                 for binding in bindings do
                     let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
                                 data, pat, retInfo, body, m, sp)) = binding

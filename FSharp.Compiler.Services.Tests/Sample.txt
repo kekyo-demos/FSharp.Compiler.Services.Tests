@@ -1,40 +1,249 @@
 ﻿名前空間またはモジュール: [Persimmon; Sample]
-    名前 'test1' のパターン
+  let bindings:
+    Named: 'test1'
+    App (Expr0):
+      App (Expr0):
         Ident: test
-          Const "success test"
-    名前 'test2' のパターン
+      App (Expr1):
+        Const:
+          String: "success test"
+    App (Expr1):
+      CompExpr:
+  let bindings:
+    Named: 'test2'
+    App (Expr0):
+      App (Expr0):
         Ident: test
-          Const "failure test"
-    名前 'test3' のパターン
+      App (Expr1):
+        Const:
+          String: "failure test"
+    App (Expr1):
+      CompExpr:
+  let bindings:
+    Named: 'test3'
+    App (Expr0):
+      App (Expr0):
         Ident: test
-          Const "exn test"
-        以下のバインディングを含むLetOrUse:
-          識別子: f
-        本体は以下:
-    識別子: err
+      App (Expr1):
+        Const:
+          String: "exn test"
+    App (Expr1):
+      CompExpr:
+        LetOrUse (Expr):
+          LongIdent: f
+          Sequential: SequencePointsAtSeq
+            [0]:
+              App (Expr0):
+                Ident: raise
+              App (Expr1):
+                Ident: MyException
+            [1]:
+              Const:
+        LetOrUse (Body):
+  let bindings:
+    LongIdent: err
+    App (Expr0):
       Ident: failwith
-        Const "oops!"
-    名前 'test4' のパターン
+    App (Expr1):
+      Const:
+        String: "oops!"
+  let bindings:
+    Named: 'test4'
+    App (Expr0):
+      App (Expr0):
         Ident: test
-          Const "error test"
-    名前 'tests' のパターン
-    名前 'tests2' のパターン
-    名前 'tests3' のパターン
+      App (Expr1):
+        Const:
+          String: "error test"
+    App (Expr1):
+      CompExpr:
+        Sequential: SequencePointsAtSeq
+          [0]:
+          [1]:
+  let bindings:
+    Named: 'tests'
+    ArrayOrListOfSeqExpr:
+      CompExpr:
+        Sequential: SequencePointsAtSeq
+          [0]:
+            App (Expr0):
+              App (Expr0):
+                Ident: test
+              App (Expr1):
+                Const:
+                  String: "success test(list)"
+            App (Expr1):
+              CompExpr:
+          [1]:
+            App (Expr0):
+              App (Expr0):
+                Ident: test
+              App (Expr1):
+                Const:
+                  String: "failure test(list)"
+            App (Expr1):
+              CompExpr:
+  let bindings:
+    Named: 'tests2'
+    ArrayOrListOfSeqExpr:
+      CompExpr:
+        Sequential: SequencePointsAtSeq
+          [0]:
+            App (Expr0):
+              App (Expr0):
+                Ident: test
+              App (Expr1):
+                Const:
+                  String: "success test1(array)"
+            App (Expr1):
+              CompExpr:
+          [1]:
+            Sequential: SequencePointsAtSeq
+              [0]:
+                App (Expr0):
+                  App (Expr0):
+                    Ident: test
+                  App (Expr1):
+                    Const:
+                      String: "success test2(array)"
+                App (Expr1):
+                  CompExpr:
+              [1]:
+                App (Expr0):
+                  App (Expr0):
+                    Ident: test
+                  App (Expr1):
+                    Const:
+                      String: "failure test(array)"
+                App (Expr1):
+                  CompExpr:
+  let bindings:
+    Named: 'tests3'
+    App (Expr0):
       Ident: seq
-    名前 'tests4' のパターン
-    名前 'tests5' のパターン
+    App (Expr1):
+      CompExpr:
+  let bindings:
+    Named: 'tests4'
+    ArrayOrListOfSeqExpr:
+      CompExpr:
+        Sequential: SequencePointsAtSeq
+          [0]:
+            App (Expr0):
+              App (Expr0):
+                Ident: test
+              App (Expr1):
+                Const:
+                  String: "success test(list with value)"
+            App (Expr1):
+              CompExpr:
+          [1]:
+            App (Expr0):
+              App (Expr0):
+                Ident: test
+              App (Expr1):
+                Const:
+                  String: "failure test(list with value)"
+            App (Expr1):
+              CompExpr:
+                Sequential: SequencePointsAtSeq
+                  [0]:
+                  [1]:
+  let bindings:
+    Named: 'tests5'
+    App (Expr0):
       Ident: parameterize
-    名前 'tests6' のパターン
-    以下のバインディングを含むLetOrUse:
-      識別子: innerTest
+    App (Expr1):
+      CompExpr:
+        Sequential: SequencePointsAtSeq
+          [0]:
+            App (Expr0):
+              Ident: case
+            App (Expr1):
+          [1]:
+            Sequential: SequencePointsAtSeq
+              [0]:
+                App (Expr0):
+                  Ident: case
+                App (Expr1):
+              [1]:
+                App (Expr0):
+                  Ident: run
+                App (Expr1):
+  let bindings:
+    Named: 'tests6'
+    LetOrUse (Expr):
+      LongIdent: innerTest
+      App (Expr0):
+        App (Expr0):
           Ident: test
-            Const "source parameterize test"
-    本体は以下:
+        App (Expr1):
+          Const:
+            String: "source parameterize test"
+      App (Expr1):
+        CompExpr:
+    LetOrUse (Body):
+      App (Expr0):
         Ident: parameterize
-    名前 'context1' のパターン
+      App (Expr1):
+        CompExpr:
+          Sequential: SequencePointsAtSeq
+            [0]:
+              App (Expr0):
+                Ident: source
+              App (Expr1):
+                ArrayOrListOfSeqExpr:
+                  CompExpr:
+                    Sequential: SequencePointsAtSeq
+                      [0]:
+                      [1]:
+            [1]:
+              App (Expr0):
+                Ident: run
+              App (Expr1):
+                Ident: innerTest
+  let bindings:
+    Named: 'context1'
+    App (Expr0):
+      App (Expr0):
         Ident: context
-          Const "Hoge"
+      App (Expr1):
+        Const:
+          String: "Hoge"
+    App (Expr1):
+      ArrayOrListOfSeqExpr:
+        CompExpr:
+          App (Expr0):
+            App (Expr0):
               Ident: context
-                Const "Piyo"
-    識別子: helperTest
+            App (Expr1):
+              Const:
+                String: "Piyo"
+          App (Expr1):
+            ArrayOrListOfSeqExpr:
+              CompExpr:
+                Sequential: SequencePointsAtSeq
+                  [0]:
+                    App (Expr0):
+                      App (Expr0):
+                        Ident: test
+                      App (Expr1):
+                        Const:
+                          String: "success(context)"
+                    App (Expr1):
+                      CompExpr:
+                  [1]:
+                    App (Expr0):
+                      App (Expr0):
+                        Ident: test
+                      App (Expr1):
+                        Const:
+                          String: "failure(context)"
+                    App (Expr1):
+                      CompExpr:
+  let bindings:
+    LongIdent: helperTest
+    App (Expr0):
       Ident: assertions
+    App (Expr1):
+      CompExpr:
