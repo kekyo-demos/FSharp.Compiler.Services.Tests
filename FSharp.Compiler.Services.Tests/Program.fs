@@ -117,26 +117,53 @@ module Hoge =
 //          | expr -> printfn "%sサポート対象外の式: %A" indent expr
           | _ -> ()
 
+        let visitBinding (indent: string) binding =
+            let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
+                        data, pat, retInfo, body, m, sp)) = binding
+            visitPattern indent pat
+            visitExpression indent body
+
+        let visitBindings (indent: string) bindings =
+            for binding in bindings do
+                visitBinding indent binding
+
+        let visitTypeDefine (indent: string) = function
+          | SynTypeDefn.TypeDefn(
+                                SynComponentInfo.ComponentInfo(_, args, _, ident, _, _, _, _),
+                                SynTypeDefnRepr.ObjectModel(kind, members, _),
+                                _, _) ->
+              let names = String.concat "." [ for i in ident -> i.idText ]
+              printfn "%sTypeDefn: %s" indent names
+              for memberDefine in members do
+                  match memberDefine with
+                  | SynMemberDefn.LetBindings(bindings, _, _, _) ->
+                    printfn "%sType Let:" indent
+                    visitBindings (indent + "  ") bindings
+                  | SynMemberDefn.Member(binding, _) ->
+                    printfn "%sType Member:" indent
+                    visitBinding (indent + "  ") binding
+                  | _ -> ()
+          | _ -> ()
+
         let visitDeclarations (indent: string) decls = 
             for declaration in decls do
-            match declaration with
-            | SynModuleDecl.Let(isRec, bindings, range) ->
-                // 宣言としてのletバインディングは
-                // (visitExpressionで処理したような)式としてのletバインディングと
-                // 似ているが、本体を持たない
-                printfn "%slet bindings:" indent
-                for binding in bindings do
-                    let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
-                                data, pat, retInfo, body, m, sp)) = binding
-                    visitPattern (indent + "  ") pat
-                    visitExpression (indent + "  ") body
-//            | _ -> printfn "%sサポート対象外の宣言: %A" indent declaration
-            | _ -> ()
+                match declaration with
+                // Basic module's binding
+                | SynModuleDecl.Let(isRec, bindings, range) ->
+                    printfn "%sModule Let:" indent
+                    visitBindings (indent + "  ") bindings
+                // MyClass
+                | SynModuleDecl.Types(typeDefines, _) ->
+                    printfn "%sModule Types:" indent
+                    for typeDefine in typeDefines do
+                      visitTypeDefine (indent + "  ") typeDefine
+//                | _ -> printfn "%sサポート対象外の宣言: %A" indent declaration
+                | _ -> ()
 
         let visitModulesAndNamespaces (indent: string) modulesOrNss =
           for moduleOrNs in modulesOrNss do
             let (SynModuleOrNamespace(lid, isMod, decls, xml, attrs, _, m)) = moduleOrNs
-            printfn "%s名前空間またはモジュール: %A" indent lid
+            printfn "%sModuleOrNamespace: %A" indent lid
             visitDeclarations "  " decls
 
         match results.ParseTree.Value with

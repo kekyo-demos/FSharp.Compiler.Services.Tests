@@ -1,5 +1,5 @@
-﻿名前空間またはモジュール: [Persimmon; Sample]
-  let bindings:
+﻿ModuleOrNamespace: [Persimmon; Sample]
+  Module Let:
       Underscore
     Named: 'test1'
     App (Expr0):
@@ -10,7 +10,7 @@
           String: "success test"
     App (Expr1):
       CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'test2'
     App (Expr0):
@@ -21,7 +21,7 @@
           String: "failure test"
     App (Expr1):
       CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'test3'
     App (Expr0):
@@ -43,14 +43,14 @@
             [1]:
               Const:
         LetOrUse (Body):
-  let bindings:
+  Module Let:
     LongIdent: err
     App (Expr0):
       Ident: failwith
     App (Expr1):
       Const:
         String: "oops!"
-  let bindings:
+  Module Let:
       Underscore
     Named: 'test4'
     App (Expr0):
@@ -64,7 +64,7 @@
         Sequential: SequencePointsAtSeq
           [0]:
           [1]:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests'
     ArrayOrListOfSeqExpr:
@@ -88,7 +88,7 @@
                   String: "failure test(list)"
             App (Expr1):
               CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests2'
     ArrayOrListOfSeqExpr:
@@ -123,7 +123,7 @@
                       String: "failure test(array)"
                 App (Expr1):
                   CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests3'
     App (Expr0):
@@ -139,7 +139,7 @@
                 String: "failure test(seq)"
           App (Expr1):
             CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests32'
     App (Expr0):
@@ -167,7 +167,7 @@
                     String: "failure test(seq)"
               App (Expr1):
                 CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests4'
     ArrayOrListOfSeqExpr:
@@ -198,7 +198,7 @@
                   [1]:
                     YieldOrReturn:
                       Const:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests5'
     App (Expr0):
@@ -234,7 +234,7 @@
                             String: "case parameterize test"
                       App (Expr1):
                         CompExpr:
-  let bindings:
+  Module Let:
       Underscore
     Named: 'tests6'
     LetOrUse (Expr):
@@ -269,7 +269,7 @@
                 Ident: run
               App (Expr1):
                 Ident: innerTest
-  let bindings:
+  Module Let:
       Underscore
     Named: 'context1'
     App (Expr0):
@@ -309,7 +309,41 @@
                           String: "failure(context)"
                     App (Expr1):
                       CompExpr:
-  let bindings:
+  Module Types:
+    TypeDefn: MyClass
+    Type Let:
+        Underscore
+      Named: 'test1'
+      App (Expr0):
+        App (Expr0):
+          Ident: test
+        App (Expr1):
+          Const:
+            String: "success test(class let)"
+      App (Expr1):
+        CompExpr:
+    Type Member:
+      LongIdent: __.test2
+      App (Expr0):
+        App (Expr0):
+          Ident: test
+        App (Expr1):
+          Const:
+            String: "not execute because this is instance method"
+      App (Expr1):
+        CompExpr:
+    Type Member:
+        Underscore
+      Named: 'test3'
+      App (Expr0):
+        App (Expr0):
+          Ident: test
+        App (Expr1):
+          Const:
+            String: "failure test(static property)"
+      App (Expr1):
+        CompExpr:
+  Module Let:
     LongIdent: helperTest
     App (Expr0):
       Ident: assertions

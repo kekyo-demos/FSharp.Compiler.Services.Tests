@@ -142,12 +142,16 @@ let context1 =
 
 
 type MyClass() =
-  // Persimmon.Sample.MyClass.test
-  member __.test() = test "not execute because this is instance method" {
+  let test1 = test "success test(class let)" {
+    do! assertEquals 1 1
+  }
+
+  // Persimmon.Sample.MyClass.test2
+  member __.test2() = test "not execute because this is instance method" {
     do! assertEquals 1 2
   }
-  // Persimmon.Sample.MyClass.test2
-  static member test2 = test "failure test(static property)" {
+  // Persimmon.Sample.MyClass.test3
+  static member test3 = test "failure test(static property)" {
     do! assertEquals 1 2
   }
 
