@@ -38,8 +38,8 @@ module Hoge =
 //        let r70ref = results.GetUsesOfSymbol(r2.[70].Symbol) |> Async.RunSynchronously
 
         let rec visitPattern (indent: string) = function
-//          | SynPat.Wild(_) -> 
-//              printfn "%sアンダースコアパターン"
+          | SynPat.Wild(_) -> 
+              printfn "%sUnderscore" indent
           | SynPat.Named(pat, name, _, _, _) ->
               visitPattern (indent + "  ") pat
               printfn "%sNamed: '%s'" indent name.idText
@@ -49,21 +49,23 @@ module Hoge =
 //        | pat -> printfn "%sその他のパターン: %A" pat
           | _ -> ()
 
+        let visitSimplePatterns (indent: string) = function
+          | SynSimplePats.SimplePats(pats, _) ->
+              for pat in pats do
+                match pat with
+                | SynSimplePat.Id(ident, _, _, _, _, _) ->
+                  printfn "%sSimplePat.Id: '%s'" indent ident.idText
+                | _ -> ()
+          | _ -> ()
+
         let visitConst (indent: string) = function
           | SynConst.String(str, _) ->
               printfn "%sString: \"%s\"" indent str
           | _ -> ()
 
         let rec visitExpression (indent: string) = function
-//          | SynExpr.IfThenElse(cond, trueBranch, falseBranchOpt, _, _, _, _) ->
-//              // すべての部分式を走査
-//              printfn "条件部:"
-//              visitExpression cond
-//              visitExpression trueBranch
-//              falseBranchOpt |> Option.iter visitExpression 
+          // tests6
           | SynExpr.LetOrUse(_, _, bindings, body, _) ->
-              // バインディングを走査
-              // ('let .. = .. and .. = .. in ...' に対しては複数回走査されることがある)
               printfn "%sLetOrUse (Expr):" indent
               for binding in bindings do
                 let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
@@ -78,11 +80,14 @@ module Hoge =
               visitExpression (indent + "  ") expr0
               printfn "%sApp (Expr1):" indent
               visitExpression (indent + "  ") expr1
+          // test
           | SynExpr.Ident id ->
               printfn "%sIdent: %A" indent id
+          // 'hogehoge'
           | SynExpr.Const(c, _) ->
               printfn "%sConst:" indent
               visitConst (indent + "  ") c
+          // tests, tests2, tests32
           | SynExpr.ArrayOrListOfSeqExpr(_, expr, _) ->
               printfn "%sArrayOrListOfSeqExpr:" indent
               visitExpression (indent + "  ") expr
@@ -96,6 +101,19 @@ module Hoge =
               visitExpression (indent1 + "  ") expr0
               printfn "%s[1]:" indent1
               visitExpression (indent1 + "  ") expr1
+          // tests3, tests32
+          | SynExpr.YieldOrReturn(_, expr, _) ->
+              printfn "%sYieldOrReturn:" indent
+              visitExpression (indent + "  ") expr
+          // tests5
+          | SynExpr.Paren(expr, _, _, _) ->
+              printfn "%sParen:" indent
+              visitExpression (indent + "  ") expr
+          // tests5
+          | SynExpr.Lambda(_, _, pats, expr, _) ->
+              printfn "%sLambda:" indent
+              visitSimplePatterns (indent + "  ") pats
+              visitExpression (indent + "  ") expr
 //          | expr -> printfn "%sサポート対象外の式: %A" indent expr
           | _ -> ()
 

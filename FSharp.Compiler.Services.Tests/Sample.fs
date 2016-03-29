@@ -42,7 +42,7 @@ let test4 = test "error test" {
 
 ////////////////////////////////
 // Lhsが存在しない式が、RhsのConstStringからシンボルを生成する必要がある。
-// その場合は、ConstStringの位置がRangeとなる。
+// その場合は、Const.Stringの位置がRangeとなる。
 
 let tests = [
   // Persimmon.Sample.tests.success test(list)
@@ -70,9 +70,19 @@ let tests2 = [|
   }
 |]
 
-// TODO:
 let tests3 = seq {
   // Persimmon.Sample.tests3.failure test(seq)
+  yield test "failure test(seq)" {
+    do! assertEquals 1 2
+  }
+}
+
+let tests32 = seq {
+  // Persimmon.Sample.tests32.success test(seq)
+  yield test "success test(seq)" {
+    do! assertEquals 1 2
+  }
+  // Persimmon.Sample.tests32.failure test(seq)
   yield test "failure test(seq)" {
     do! assertEquals 1 2
   }
@@ -90,36 +100,32 @@ let tests4 = [
   }
 ]
 
-////////////////////////////////
-// TODO: パラメータ位置をシンボル名として拾い上げるのは難しいか！？
 let tests5 =
   parameterize {
-    // Persimmon.Sample.tests5.case parameterize test(1, 1)
     case (1, 1)
-    // Persimmon.Sample.tests5.case parameterize test(1, 2)
     case (1, 2)
+    // TODO: パラメタライズドテストのパラメータ部はFQTNに含めたくない...
+    // Persimmon.Sample.tests5.case parameterize test(1, 1)
+    // Persimmon.Sample.tests5.case parameterize test(1, 2)
     run (fun (x, y) -> test "case parameterize test" {
       do! assertEquals x y
     })
   }
 
-////////////////////////////////
-// TODO: パラメータ位置をシンボル名として拾い上げるのは難しいか！？
 let tests6 =
+  // Persimmon.Sample.tests6.innerTest(1, 1)
+  // Persimmon.Sample.tests6.innerTest(1, 2)
   let innerTest (x, y) = test "source parameterize test" {
     do! assertEquals x y
   }
   parameterize {
     source [
-      // Persimmon.Sample.tests6.source parameterize test(1, 1)
       (1, 1)
-      // Persimmon.Sample.tests6.source parameterize test(1, 2)
       (1, 2)
     ]
     run innerTest
   }
 
-// TODO:
 let context1 =
     context "Hoge" [
         context "Piyo" [
