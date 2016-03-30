@@ -63,21 +63,44 @@ module private DiscovererImpl =
         match value with
         | SynConst.String(str, range) ->
             let nest = context.Nest(str, range)
-            yield nest.ToSymbolInformation()
+            ()
+            //TODO: yield nest.ToSymbolInformation()
             //printfn "%sString: \"%s\"" context.Indent str
         | _ -> ()
     }
 
-    let rec visitExpression (context: DiscoverContext) expr : SymbolInformation seq = seq {
+    // Try get detailed test name (test title):
+    //  expr:
+    //    App (Expr0):
+    //        App (Expr00):
+    //          Ident: test
+    //        App (Expr01):
+    //          Const:
+    //            String: "success test(list)"
+    //    App (Expr1):
+    //        CompExpr:
+    let tryGetTestName = function
+        | SynExpr.App(_, _, expr0, expr1, _) ->
+            match expr0 with
+            | SynExpr.App(_, _, expr00, expr01, _) ->
+                match expr01 with
+                | SynExpr.Const(c, _) ->
+                    match c with
+                    | SynConst.String(str, range) ->
+                        Some (str, range)
+                    | _ -> None
+                | _ -> None
+            | _ -> None
+        | _ -> None
+
+    let rec visitExpressionInternal (context: DiscoverContext) expr : SymbolInformation seq =
+      seq {
         match expr with
         // tests6
         | SynExpr.LetOrUse(_, _, bindings, body, _) ->
             //printfn "%sLetOrUse (Expr):" context.Indent
             for binding in bindings do
-                let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
-                                data, pat, retInfo, init, m, sp)) = binding
-                yield! visitPattern context pat
-                yield! visitExpression context init
+                yield! visitBinding context binding
             //printfn "%sLetOrUse (Body):" context.Indent
             yield! visitExpression context body
         | SynExpr.App(_, _, expr0, expr1, _) ->
@@ -86,10 +109,10 @@ module private DiscovererImpl =
             //printfn "%sApp (Expr1):" context.Indent
             yield! visitExpression context expr1
         // test
-        | SynExpr.Ident id ->
-            //printfn "%sIdent: %A" context.Indent id
-            let nest = context.Nest(id.idText, id.idRange)
-            yield nest.ToSymbolInformation()
+//        | SynExpr.Ident id ->
+//            //printfn "%sIdent: %A" context.Indent id
+//            let nest = context.Nest(id.idText, id.idRange)
+//            yield nest.ToSymbolInformation()
         // 'hogehoge'
         | SynExpr.Const(c, _) ->
             //printfn "%sConst:" context.Indent
@@ -102,13 +125,15 @@ module private DiscovererImpl =
             //printfn "%sCompExpr:" context.Indent
             yield! visitExpression context expr
         | SynExpr.Sequential(info, _, expr0, expr1, range) ->
-            //printfn "%sSequential: %A" context.Indent info
-            let nest0 = context.Nest("[0]", expr0.Range)
-            //printfn "%s[0]:" indent1
-            yield! visitExpression nest0 expr0
-            let nest1 = context.Nest("[1]", expr1.Range)
-            //printfn "%s[1]:" indent1
-            yield! visitExpression nest1 expr1
+            yield! visitExpression context expr0
+            yield! visitExpression context expr1
+//            //printfn "%sSequential: %A" context.Indent info
+//            let nest0 = context.Nest("[0]", expr0.Range)
+//            //printfn "%s[0]:" indent1
+//            yield! visitExpression nest0 expr0
+//            let nest1 = context.Nest("[1]", expr1.Range)
+//            //printfn "%s[1]:" indent1
+//            yield! visitExpression nest1 expr1
         // tests3, tests32
         | SynExpr.YieldOrReturn(_, expr, _) ->
             //printfn "%sYieldOrReturn:" context.Indent
@@ -122,16 +147,35 @@ module private DiscovererImpl =
             //printfn "%sLambda:" context.Indent
             yield! visitSimplePatterns context pats
             yield! visitExpression context expr
-//        | expr -> printfn "%sサポート対象外の式: %A" context.Indent expr
+//            | expr -> printfn "%sサポート対象外の式: %A" context.Indent expr
         | _ -> ()
-    }
+      }
 
-    let visitBinding (context: DiscoverContext) binding : SymbolInformation seq = seq {
+    and visitExpression (context: DiscoverContext) expr : SymbolInformation seq = seq {
+        let nest =
+            match tryGetTestName expr with
+            | Some (name, range) -> Some (context.Nest(name, range))
+            | None -> None
+        match nest with
+        | Some namedContext ->
+            yield namedContext.ToSymbolInformation()
+            yield! visitExpressionInternal namedContext expr
+        | None ->
+            yield! visitExpressionInternal context expr
+      }
+
+    and visitBinding (context: DiscoverContext) binding : SymbolInformation seq = seq {
         let (Binding(access, kind, inlin, mutabl, attrs, xmlDoc, 
                     data, pat, retInfo, body, m, sp)) = binding
-        yield! visitPattern context pat
-        yield! visitExpression context body
-    }
+        match pat with
+        | SynPat.Named(pat, name, _, _, range) ->
+            let namedContext = context.Nest(name.idText, range)
+            yield namedContext.ToSymbolInformation()
+            yield! visitExpressionInternal namedContext body
+        | _ ->
+            //yield! visitPattern context pat
+            yield! visitExpressionInternal context body
+      }
 
     let visitBindings (context: DiscoverContext) bindings : SymbolInformation seq = seq {
         for binding in bindings do
@@ -141,19 +185,20 @@ module private DiscovererImpl =
     let visitTypeDefine (context: DiscoverContext) typeDefine : SymbolInformation seq = seq {
         match typeDefine with
         | SynTypeDefn.TypeDefn(
-                              SynComponentInfo.ComponentInfo(_, args, _, ident, _, _, _, _),
+                              SynComponentInfo.ComponentInfo(_, args, _, ident, _, _, _, range),
                               SynTypeDefnRepr.ObjectModel(kind, members, _),
                               _, _) ->
             let names = String.concat "." [ for i in ident -> i.idText ]
+            let namedContext = context.Nest(names, range)
             //printfn "%sTypeDefn: %s" context.Indent names
             for memberDefine in members do
                 match memberDefine with
                 | SynMemberDefn.LetBindings(bindings, _, _, _) ->
-                    //printfn "%sType Let:" context.Indent
-                    yield! visitBindings context bindings
+                    //printfn "%sType Let:" namedContext.Indent
+                    yield! visitBindings namedContext bindings
                 | SynMemberDefn.Member(binding, _) ->
-                    //printfn "%sType Member:" context.Indent
-                    yield! visitBinding context binding
+                    //printfn "%sType Member:" namedContext.Indent
+                    yield! visitBinding namedContext binding
                 | _ -> ()
         | _ -> ()
     }
