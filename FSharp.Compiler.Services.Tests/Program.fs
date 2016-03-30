@@ -63,8 +63,7 @@ module private DiscovererImpl =
         match value with
         | SynConst.String(str, range) ->
             let nest = context.Nest(str, range)
-            ()
-            //TODO: yield nest.ToSymbolInformation()
+            yield nest.ToSymbolInformation()
             //printfn "%sString: \"%s\"" context.Indent str
         | _ -> ()
     }
@@ -79,6 +78,7 @@ module private DiscovererImpl =
     //            String: "success test(list)"
     //    App (Expr1):
     //        CompExpr:
+    //        ArrayOrListOfSeqExpr:   <-- context "Hoge"
     let tryGetTestName = function
         | SynExpr.App(_, _, expr0, expr1, _) ->
             match expr0 with
@@ -87,7 +87,8 @@ module private DiscovererImpl =
                 | SynExpr.Const(c, _) ->
                     match c with
                     | SynConst.String(str, range) ->
-                        Some (str, range)
+                        let contextSeq = match expr1 with | SynExpr.ArrayOrListOfSeqExpr(_, _, _) -> true | _ -> false
+                        Some (str, contextSeq, range)
                     | _ -> None
                 | _ -> None
             | _ -> None
@@ -114,9 +115,9 @@ module private DiscovererImpl =
 //            let nest = context.Nest(id.idText, id.idRange)
 //            yield nest.ToSymbolInformation()
         // 'hogehoge'
-        | SynExpr.Const(c, _) ->
-            //printfn "%sConst:" context.Indent
-            yield! visitConst context c
+//        | SynExpr.Const(c, _) ->
+//            //printfn "%sConst:" context.Indent
+//            yield! visitConst context c
         // tests, tests2, tests32
         | SynExpr.ArrayOrListOfSeqExpr(_, expr, _) ->
             //printfn "%sArrayOrListOfSeqExpr:" context.Indent
@@ -145,7 +146,7 @@ module private DiscovererImpl =
         // tests5
         | SynExpr.Lambda(_, _, pats, expr, _) ->
             //printfn "%sLambda:" context.Indent
-            yield! visitSimplePatterns context pats
+//            yield! visitSimplePatterns context pats
             yield! visitExpression context expr
 //            | expr -> printfn "%sサポート対象外の式: %A" context.Indent expr
         | _ -> ()
@@ -154,7 +155,7 @@ module private DiscovererImpl =
     and visitExpression (context: DiscoverContext) expr : SymbolInformation seq = seq {
         let nest =
             match tryGetTestName expr with
-            | Some (name, range) -> Some (context.Nest(name, range))
+            | Some (name, _, range) -> Some (context.Nest(name, range))
             | None -> None
         match nest with
         | Some namedContext ->
@@ -169,7 +170,18 @@ module private DiscovererImpl =
                     data, pat, retInfo, body, m, sp)) = binding
         match pat with
         | SynPat.Named(pat, name, _, _, range) ->
-            let namedContext = context.Nest(name.idText, range)
+            let namedContext =
+                match tryGetTestName body with
+                | Some (cname, contextSeq, crange) ->
+                    match contextSeq with
+                    | true -> context.Nest(name.idText + "." + cname, crange)
+                    | false -> context.Nest(name.idText, range)
+                | None -> context.Nest(name.idText, range)
+            yield namedContext.ToSymbolInformation()
+            yield! visitExpressionInternal namedContext body
+        | SynPat.LongIdent(LongIdentWithDots(ident, _), _, _, _, _, range) ->
+            let names = String.concat "." [ for i in ident -> i.idText ]
+            let namedContext = context.Nest(names, range)
             yield namedContext.ToSymbolInformation()
             yield! visitExpressionInternal namedContext body
         | _ ->
