@@ -10,11 +10,13 @@ open Microsoft.FSharp.Compiler.SourceCodeServices
 
 module private DiscovererImpl =
 
-    type SymbolInformation (symbolName, fileName: string, minLine: int, maxLine: int) =
+    type SymbolInformation (symbolName, fileName: string, minLine: int, maxLine: int, minColumn: int, maxColumn: int) =
         member __.SymbolName = symbolName
         member __.FileName = fileName
         member __.MinLine = minLine
         member __.MaxLine = maxLine
+        member __.MinColumn = minColumn
+        member __.MaxColumn = maxColumn
 
     [<Sealed>]
     type DiscoverContext private (symbolNames: string[], range: range) =
@@ -24,7 +26,7 @@ module private DiscovererImpl =
         member __.Nest(name: string, range) =
             DiscoverContext([name] |> (Seq.append symbolNames) |> Seq.toArray, range)
         member __.ToSymbolInformation() =
-            SymbolInformation(symbolNames |> String.concat ".", range.FileName, range.StartLine, range.EndLine)
+            SymbolInformation(symbolNames |> String.concat ".", range.FileName, range.StartLine, range.EndLine, range.StartColumn, range.EndColumn)
 
     let rec visitPattern (context: DiscoverContext) pat : SymbolInformation seq = seq {
         match pat with
@@ -220,11 +222,11 @@ module private DiscovererImpl =
             match declaration with
             // Basic module's binding
             | SynModuleDecl.Let(isRec, bindings, range) ->
-                printfn "%sModule Let:" context.Indent
+                //printfn "%sModule Let:" context.Indent
                 yield! visitBindings context bindings
             // MyClass
             | SynModuleDecl.Types(typeDefines, _) ->
-                printfn "%sModule Types:" context.Indent
+                //printfn "%sModule Types:" context.Indent
                 for typeDefine in typeDefines do
                     yield! visitTypeDefine context typeDefine
 //            | _ -> printfn "%sサポート対象外の宣言: %A" context.Indent declaration
