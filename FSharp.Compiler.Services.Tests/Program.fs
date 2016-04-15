@@ -217,27 +217,37 @@ module private DiscovererImpl =
         | _ -> ()
     }
 
-    let visitDeclarations (context: DiscoverContext) decls : SymbolInformation seq = seq {
-        for declaration in decls do
-            match declaration with
-            // Basic module's binding
-            | SynModuleDecl.Let(isRec, bindings, range) ->
-                //printfn "%sModule Let:" context.Indent
-                yield! visitBindings context bindings
-            // MyClass
-            | SynModuleDecl.Types(typeDefines, _) ->
-                //printfn "%sModule Types:" context.Indent
-                for typeDefine in typeDefines do
-                    yield! visitTypeDefine context typeDefine
+    let rec visitDeclaration (context: DiscoverContext) decl : SymbolInformation seq = seq {
+        match decl with
+        // Basic module's binding
+        | SynModuleDecl.Let(_, bindings, _) ->
+            //printfn "%sModule Let:" context.Indent
+            yield! visitBindings context bindings
+        // MyClass
+        | SynModuleDecl.Types(typeDefines, _) ->
+            //printfn "%sModule Types:" context.Indent
+            for typeDefine in typeDefines do
+                yield! visitTypeDefine context typeDefine
+        | SynModuleDecl.NestedModule(cinfo, nestedDecls, _, _) ->
+            //printfn "%sNestedModule: %A" context.Indent decl
+            let (SynComponentInfo.ComponentInfo(_, args, _, ident, _, _, _, range)) = cinfo
+            let names = String.concat "." [ for i in ident -> i.idText ]
+            let nest = context.Nest(names, range)
+            yield! visitDeclarations nest nestedDecls
 //            | _ -> printfn "%sサポート対象外の宣言: %A" context.Indent declaration
-            | _ -> ()
+        | _ -> ()
+     }
+
+    and visitDeclarations (context: DiscoverContext) decls : SymbolInformation seq = seq {
+        for declaration in decls do
+            yield! visitDeclaration context declaration
     }
 
     let visitModulesAndNamespaces (context: DiscoverContext) modulesOrNss : SymbolInformation seq = seq {
         for moduleOrNs in modulesOrNss do
-            let (SynModuleOrNamespace(lid, isMod, decls, xml, attrs, _, range)) = moduleOrNs
-            //printfn "%sModuleOrNamespace: %A" context.Indent lid
-            let names = String.concat "." [ for i in lid -> i.idText ]
+            let (SynModuleOrNamespace(ident, isMod, decls, xml, attrs, _, range)) = moduleOrNs
+            //printfn "%sModuleOrNamespace: %A" context.Indent ident
+            let names = String.concat "." [ for i in ident -> i.idText ]
             let nest = context.Nest(names, range)
             yield! visitDeclarations nest decls
     }
