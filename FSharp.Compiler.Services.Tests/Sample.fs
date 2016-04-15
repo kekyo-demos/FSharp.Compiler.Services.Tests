@@ -155,11 +155,11 @@ let tests6 =
 let context1 =
     context "Hoge" [
         context "Piyo" [
-            // Persimmon.Sample.context1.Hoge.Piyo.success(context)
+            // Persimmon.Sample.Hoge.Piyo.success(context)
             test "success(context)" {
                 do! assertEquals 1 1
             }
-            // Persimmon.Sample.context1.Hoge.Piyo.failure(context)
+            // Persimmon.Sample.Hoge.Piyo.failure(context)
             test "failure(context)" {
                 do! assertEquals 1 2
             }

@@ -176,7 +176,7 @@ module private DiscovererImpl =
                 match tryGetTestName body with
                 | Some (cname, contextSeq, crange) ->
                     match contextSeq with
-                    | true -> context.Nest(name.idText + "." + cname, crange)
+                    | true -> context.Nest(cname, crange)
                     | false -> context.Nest(name.idText, range)
                 | None -> context.Nest(name.idText, range)
             yield namedContext.ToSymbolInformation()
